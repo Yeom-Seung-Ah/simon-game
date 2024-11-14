@@ -18,7 +18,7 @@ function nextSequence() {
 
 $(".btn").on("click", function() {
     var userChosenColour = $(this).attr("id");
-    playSound(useChosenColour);
+    playSound(userChosenColour);
     userClickedPattern.push(userChosenColour);
 })
 
