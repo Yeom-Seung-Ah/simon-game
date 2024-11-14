@@ -3,8 +3,8 @@ var userClickedPattern = [];
 const buttonColours = ["red", "blue", "green", "yellow"];
 
 function playSound(name) {
-    var audio = new Audio(`sounds/${name}.mp3`);
-    audio.play;
+    var audio = new Audio(`./sounds/${name}.mp3`);
+    audio.play();
 }
 
 function nextSequence() {
@@ -20,5 +20,6 @@ $(".btn").on("click", function() {
     var userChosenColour = $(this).attr("id");
     playSound(userChosenColour);
     userClickedPattern.push(userChosenColour);
+    console.log(userChosenColour);
 })
 
