@@ -2,6 +2,10 @@ var gamePattern = [];
 var userClickedPattern = [];
 const buttonColours = ["red", "blue", "green", "yellow"];
 
+function playSound(name) {
+    var audio = new Audio(`sounds/${name}.mp3`);
+    audio.play;
+}
 
 function nextSequence() {
     var randomNumber = Math.floor(Math.random()*4);
@@ -9,12 +13,12 @@ function nextSequence() {
     gamePattern.push(randomChosenColour);
 
     $(`#${randomChosenColour}`).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-    var audio = new Audio(`sounds/${randomChosenColour}.mp3`);
-    audio.play;
+    playSound(randomChosenColour);
 };
 
 $(".btn").on("click", function() {
     var userChosenColour = $(this).attr("id");
+    playSound(useChosenColour);
     userClickedPattern.push(userChosenColour);
-    console.log(userClickedPattern);
 })
+
